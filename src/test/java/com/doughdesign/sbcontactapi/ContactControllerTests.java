@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @SpringBootTest
 public class ContactControllerTests {
 
@@ -13,8 +16,11 @@ public class ContactControllerTests {
 
     @Test
     void returns_string() {
-        String result = contactController.getContacts();
+        List<String> result = contactController.getContacts();
 
-        Assertions.assertEquals("**Contacts Endpoint works**", result);
+        List<String> expected = new ArrayList<>();
+        expected.add("**List of Contacts**");
+
+        Assertions.assertEquals(expected, result);
     }
 }
