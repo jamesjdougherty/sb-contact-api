@@ -22,4 +22,13 @@ public class ContactControllerTests {
 
         Assertions.assertEquals(expected, result);
     }
+
+    @Test
+    void return_name() {
+        String result = contactController.getContact("James");
+
+        String expected = "James";
+
+        Assertions.assertEquals(expected, result);
+    }
 }

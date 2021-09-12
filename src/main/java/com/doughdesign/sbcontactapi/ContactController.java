@@ -3,6 +3,7 @@ package com.doughdesign.sbcontactapi;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
@@ -21,4 +22,10 @@ public class ContactController {
         return contacts;
     }
 
+    @CrossOrigin
+    @GetMapping("/contacts/{name}")
+    @ResponseBody
+    String getContact(@PathVariable String name) {
+        return name;
+    }
 }
