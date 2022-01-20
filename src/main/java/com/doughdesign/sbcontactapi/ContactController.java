@@ -26,6 +26,9 @@ public class ContactController {
     @GetMapping("/contacts/{name}")
     @ResponseBody
     String getContact(@PathVariable String name) {
-        return name;
+        Contact contact = new Contact();
+        contact.setName(name);
+
+        return contact.getName();
     }
 }

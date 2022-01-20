@@ -27,7 +27,9 @@ public class ContactControllerTests {
     void return_name() {
         String result = contactController.getContact("James");
 
-        String expected = "James";
+        Contact contact = new Contact();
+        contact.setName("James");
+        String expected = contact.getName();
 
         Assertions.assertEquals(expected, result);
     }
